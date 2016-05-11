@@ -1,0 +1,26 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        @{
+            int data = ViewBag.Count;
+            string counterMax = ViewBag.Max;
+        }
+        <form action="/Counter/SaveCount" method="post">
+            Counter: <input type="text" id="TxtCounter" name="CounterCount" value="@data" /><br />
+            <input type="submit" name="BtnSubmit" value="Up" />
+            <input type="submit" name="BtnSubmit" value="Reset" />
+        </form><br />
+        <label>@counterMax</label><br />
+    </div>
+</body>
+</html>
